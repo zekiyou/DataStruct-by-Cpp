@@ -7,7 +7,7 @@ using namespace std;
 namespace DTLib
 {
 /* 这个重载函数针对单个对象， throw() 是异常规格说明，函数不会抛出任何异常 */
-void* Object::operator new (size_t size) throw()
+void* Object::operator new (size_t size, nothrow_t&) noexcept
 {
     cout << "void* Object::operator new " << size << endl;
     return malloc(size);
@@ -21,7 +21,7 @@ void Object::operator delete(void* p)
 }
 
 /*  */
-void* Object::operator new[] (size_t size) throw()
+void* Object::operator new[] (size_t size, nothrow_t&) noexcept
 {
     return malloc(size);
 }
