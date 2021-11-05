@@ -1,24 +1,28 @@
 #include <iostream>
 #include "smartpointer.h"
+#include "exception.h"
+
 using namespace std;
 using namespace DTLib;
 
 int main()
 {
-    cout << "Hello World!" << endl;
+    try {
+      cout << __FILE__ << ":" << __LINE__ << endl;
+      THROW_EXCEPTION(ArithmeticException, "my Arithmeticexception");
+    }
 
-    SmartPointer<int> p1 = new int;
+    catch (const ArithmeticException& e) {
+        cout << "ArithmeticException" << endl;
+        cout << e.message() << endl;
+        cout << e.location() << endl;
+    }
 
-    *p1 = 5;
-
-    SmartPointer<int> p2;
-
-    p2 = p1;
-
-    cout << p1.isNull() << endl;
-
-    cout << p2.isNull() << endl;
-    cout << *p2 << endl;
+    catch (const Exception& e) {
+        cout << "Exception" << endl;
+        cout << e.message() << endl;
+        cout << e.location() << endl;
+    }
 
     return 0;
 }

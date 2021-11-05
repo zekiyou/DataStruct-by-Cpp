@@ -58,5 +58,6 @@ public:
     }
 
 };
+
 }
 #endif // SMARTPOINTER_H
