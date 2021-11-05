@@ -51,9 +51,11 @@ OBJECTS_DIR   = ./
 ####### Files
 
 SOURCES       = ../DTLib/main.cpp \
-		../DTLib/exception.cpp 
+		../DTLib/exception.cpp \
+		../DTLib/object.cpp 
 OBJECTS       = main.o \
-		exception.o
+		exception.o \
+		object.o
 DIST          = /usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/spec_pre.prf \
 		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/common/unix.conf \
 		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/common/linux.conf \
@@ -145,8 +147,10 @@ DIST          = /usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/spec_pre.prf \
 		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/yacc.prf \
 		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/lex.prf \
 		../DTLib/DTLib.pro smartpointer.h \
-		exception.h ../DTLib/main.cpp \
-		../DTLib/exception.cpp
+		exception.h \
+		object.h ../DTLib/main.cpp \
+		../DTLib/exception.cpp \
+		../DTLib/object.cpp
 QMAKE_TARGET  = DTLib
 DESTDIR       = 
 TARGET        = DTLib
@@ -390,6 +394,9 @@ main.o: ../DTLib/main.cpp ../DTLib/smartpointer.h \
 
 exception.o: ../DTLib/exception.cpp ../DTLib/exception.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o exception.o ../DTLib/exception.cpp
+
+object.o: ../DTLib/object.cpp ../DTLib/object.h
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o object.o ../DTLib/object.cpp
 
 ####### Install
 
