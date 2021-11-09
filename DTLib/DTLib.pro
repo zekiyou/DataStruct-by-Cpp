@@ -11,4 +11,6 @@ SOURCES += \
 HEADERS += \
     smartpointer.h \
     exception.h \
-    object.h
+    object.h \
+    list.h \
+    sqlist.h
