@@ -13,4 +13,6 @@ HEADERS += \
     exception.h \
     object.h \
     list.h \
-    sqlist.h
+    staticlist.h \
+    seqlist.h \
+    dynamiclist.h

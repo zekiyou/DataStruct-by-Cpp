@@ -1,5 +1,5 @@
-#ifndef SQLIST_H
-#define SQLIST_H
+#ifndef SEQLIST_H
+#define SEQLIST_H
 
 #include "list.h"
 #include "exception.h"
@@ -12,6 +12,7 @@ protected:
     int m_length;
 public:
     bool insert(int i, const T& e);
+    bool insert(const T& e);
     bool remove(int i);
     bool set(int i, const T& e);
     bool get(int i, T& e);
@@ -36,7 +37,7 @@ template <typename T>
 // 4.在i位置插入元素
 // 5.长度+1
 bool SeqList<T>::insert(int i, const T& e) {
-    bool ret = (i>=0) && (i<length()) && capacity();
+    bool ret = (i>=0) && (i<=length()) && capacity();
 
     if (ret) {
         for (int pos = length()-1; pos >= i; pos--) {
@@ -45,11 +46,14 @@ bool SeqList<T>::insert(int i, const T& e) {
 
         m_array[i] = e;
         m_length++;
-
-
     }
 
     return ret;
+}
+
+template <typename T>
+bool SeqList<T>::insert(const T& e) {
+    return insert(m_length,e);
 }
 
 template <typename T>
@@ -128,4 +132,4 @@ T SeqList<T>::operator [] (int i) const{
 
 }
 
-#endif // SQLIST_H
+#endif // SEQLIST_H
