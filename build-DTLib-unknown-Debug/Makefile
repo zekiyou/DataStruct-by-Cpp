@@ -152,7 +152,10 @@ DIST          = /usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/spec_pre.prf \
 		list.h \
 		staticlist.h \
 		seqlist.h \
-		dynamiclist.h ../DTLib/main.cpp \
+		dynamiclist.h \
+		array.h \
+		staticarray.h \
+		dynamicarray.h ../DTLib/main.cpp \
 		../DTLib/exception.cpp \
 		../DTLib/object.cpp
 QMAKE_TARGET  = DTLib
@@ -397,7 +400,10 @@ main.o: ../DTLib/main.cpp ../DTLib/smartpointer.h \
 		../DTLib/exception.h \
 		../DTLib/staticlist.h \
 		../DTLib/seqlist.h \
-		../DTLib/list.h
+		../DTLib/list.h \
+		../DTLib/dynamiclist.h \
+		../DTLib/staticarray.h \
+		../DTLib/array.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o main.o ../DTLib/main.cpp
 
 exception.o: ../DTLib/exception.cpp ../DTLib/exception.h \

@@ -36,7 +36,8 @@ template <typename T>
 // 3.移动i位置后面的所有元素
 // 4.在i位置插入元素
 // 5.长度+1
-bool SeqList<T>::insert(int i, const T& e) {
+bool SeqList<T>::insert(int i, const T& e)
+{
     bool ret = (i>=0) && (i<=length()) && capacity();
 
     if (ret) {
@@ -52,7 +53,8 @@ bool SeqList<T>::insert(int i, const T& e) {
 }
 
 template <typename T>
-bool SeqList<T>::insert(const T& e) {
+bool SeqList<T>::insert(const T& e)
+{
     return insert(m_length,e);
 }
 
@@ -61,7 +63,8 @@ template <typename T>
 // 1.判断插入位置是否合法
 // 3.移动i位置后面的所有元素
 // 5.长度-1
-bool SeqList<T>::remove(int i) {
+bool SeqList<T>::remove(int i)
+{
     bool ret = (i>=0) && (i<length());
 
     if (ret) {
@@ -79,7 +82,8 @@ template <typename T>
 // set思路
 // 1.判断set位置是否合法
 // 2.set对应位置元素
-bool SeqList<T>::set(int i, const T& e) {
+bool SeqList<T>::set(int i, const T& e)
+{
     bool ret = (i>=0) && (i<length());
 
     if(ret) {
@@ -93,7 +97,8 @@ template <typename T>
 // set思路
 // 1.判断get位置是否合法
 // 2.get对应位置元素
-bool SeqList<T>::get(int i, T& e) {
+bool SeqList<T>::get(int i, T& e)
+{
     bool ret = (i>=0) && (i<length());
 
     if(ret) {
@@ -104,18 +109,21 @@ bool SeqList<T>::get(int i, T& e) {
 }
 
 template <typename T>
-int SeqList<T>::length() const {
+int SeqList<T>::length() const
+{
     return m_length;
 }
 
 template <typename T>
-void SeqList<T>::clear() {
+void SeqList<T>::clear()
+{
     m_length = 0;
 }
 
 
 template <typename T>
-T& SeqList<T>::operator [] (int i) {
+T& SeqList<T>::operator [] (int i)
+{
     bool ret = (i>=0) && (i<length());
 
     if(ret) {

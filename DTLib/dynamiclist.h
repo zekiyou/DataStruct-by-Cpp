@@ -16,7 +16,8 @@ public:
 };
 
 template <typename T>
-DynamicList<T>::DynamicList(int capacity) {
+DynamicList<T>::DynamicList(int capacity)
+{
     SeqList<T>::m_array = new T[capacity];
 
     if (SeqList<T>::m_array != nullptr) {
@@ -27,7 +28,8 @@ DynamicList<T>::DynamicList(int capacity) {
 }
 
 template <typename T>
-int DynamicList<T>::capacity() const {
+int DynamicList<T>::capacity() const
+{
     return m_capacity;
 }
 
@@ -38,7 +40,8 @@ template <typename T>
 //3. 移动元素值
 //4. 更改指向空间，释放原空间
 //5. 更新长度，容量
-void DynamicList<T>::resize(int capacity) {
+void DynamicList<T>::resize(int capacity)
+{
     if (capacity == m_capacity)
         return;
     else {
@@ -56,6 +59,8 @@ void DynamicList<T>::resize(int capacity) {
             SeqList<T>::m_length = length;
             SeqList<T>::m_array = array;
             m_capacity = capacity;
+
+            //把tmp释放放在最后面，保证异常安全
             delete []  temp;
         } else {
             THROW_EXCEPTION(NoEnoughMemoryException, "No memory to resize");
@@ -66,7 +71,8 @@ void DynamicList<T>::resize(int capacity) {
 
 
 template <typename T>
-DynamicList<T>::~DynamicList() {
+DynamicList<T>::~DynamicList()
+{
     delete [] SeqList<T>::m_array;
 }
 
