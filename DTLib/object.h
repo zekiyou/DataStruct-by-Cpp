@@ -6,6 +6,9 @@ using namespace std;
 namespace DTLib
 {
 class Object
+        //尽量使用单继承进行系统设计
+        //尽量保持系统中只存在单一的继承树 创建顶层抽象父类
+        //所有类来作为一个顶级父类的子类 可以规范行为 如动态内存管理 如比较操作
 {
   public:
     void* operator new (size_t size, nothrow_t&) noexcept;

@@ -18,4 +18,8 @@ HEADERS += \
     dynamiclist.h \
     array.h \
     staticarray.h \
-    dynamicarray.h
+    dynamicarray.h \
+    linklist.h \
+    staticlinklist.h \
+    pointer.h \
+    sharepointer.h
