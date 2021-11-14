@@ -4,6 +4,10 @@
 #include "pointer.h"
 using namespace std;
 namespace DTLib {
+//SmartPointer 智能指针
+// 1，指针生命周期结束时主动释放堆空间；
+// 2，一片堆空间最多只能由一个指针标识；
+// 3, 杜绝指针之间的运算
 template <typename T>
 class SmartPointer : public Pointer<T>
 {

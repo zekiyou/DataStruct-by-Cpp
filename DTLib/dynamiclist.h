@@ -3,6 +3,10 @@
 #include "seqlist.h"
 namespace DTLib {
 template <typename T>
+
+// DynamaicList 动态顺序表
+// 动态顺序表在堆上申请空间来实现顺序表
+
 class DynamicList : public SeqList<T>
 {
 private:

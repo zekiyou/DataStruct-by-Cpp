@@ -3,6 +3,8 @@
 #include "array.h"
 namespace DTLib {
 template <typename T, int N>
+//静态数组
+//在堆上创建空间完成Array功能
 class StaticArray : public Array<T>
 {
 protected:

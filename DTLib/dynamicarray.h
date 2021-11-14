@@ -4,11 +4,14 @@
 #include "exception.h"
 namespace DTLib {
 template <typename T>
+// 动态 Array
+// 用内存申请在堆上实现数组
 class DynamicArray : public Array<T>
 {
 protected:
     int m_length;
 public:
+    //在堆空间申请对应长度的内存空间
     DynamicArray (int length)
     {
         Array<T>::m_array = new T[length];
@@ -18,6 +21,7 @@ public:
         }
 
     }
+
 
     DynamicArray (const DynamicArray<T>& obj)
     {

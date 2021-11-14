@@ -4,6 +4,8 @@
 
 namespace DTLib{
 template <typename T>
+// 智能指针的抽象顶级父类   Pointer
+// 提供指针所需的接口
 class Pointer : public Object
 {
 protected:
@@ -21,11 +23,20 @@ public:
         return *m_pointer;
     }
 
+    const T* operator -> () const{
+        return m_pointer;
+    }
+
+    const T* operator * ()  const{
+        return *m_pointer;
+    }
+
+
     bool isNull() {
         return  m_pointer == nullptr;
     }
 
-    T* get() {
+    const T* get() const{
         return m_pointer;
     }
 

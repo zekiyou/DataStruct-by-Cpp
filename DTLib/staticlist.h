@@ -4,6 +4,8 @@
 
 namespace DTLib {
 template <typename T, int N>
+// 静态 顺序表
+// 用数组在栈上实现顺序表
 class StaticList : public SeqList<T>
 {
 protected:

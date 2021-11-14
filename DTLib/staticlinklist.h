@@ -4,7 +4,9 @@
 #include "linklist.h"
 
 namespace DTLib {
-
+// 静态单链表
+// 解决频繁插入删除节点
+// 造成内存碎片现象
 template <typename T, int N>
 class StaticList : public LinkList<T>
 {
@@ -31,6 +33,7 @@ public:
 
 };
 
+//构造函数中 初始化用以记录内存区域是否被使用
 template <typename T, int N>
 StaticList<T,N>::StaticList()
 {
@@ -45,6 +48,8 @@ StaticList<T,N>::~StaticList()
     this->clear();
 }
 
+//重写LinkList的cereat
+//让其在指定的内存区域来创建节点
 template <typename T, int N>
 typename LinkList<T>::Node* StaticList<T, N>::creat()
 {
@@ -61,6 +66,8 @@ typename LinkList<T>::Node* StaticList<T, N>::creat()
 
 }
 
+//重写LinkList的destory
+//让其在指定的内存区域来销毁节点
 template <typename T, int N>
 void StaticList<T, N>::destory(typename LinkList<T>::Node* p)
 {

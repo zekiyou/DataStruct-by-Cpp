@@ -3,8 +3,10 @@
 #include "object.h"
 namespace DTLib {
 
+//定义THORW_EXCEPTION的宏来负责抛出异常
 #define THROW_EXCEPTION(e,m) (throw e(m,__FILE__,__LINE__))
 
+//异常类的顶级父类Exception
 class Exception : public Object
 {
 protected:

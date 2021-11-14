@@ -5,6 +5,10 @@
 #include "exception.h"
 
 namespace DTLib {
+// Array的顶级抽象父类
+// 原生数组的缺陷
+// 1. 无法获取长度信息
+// 2. 数组越界访问没有异常
 template <typename T>
 class Array : public Object
 {

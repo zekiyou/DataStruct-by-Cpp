@@ -4,6 +4,9 @@
 #include "list.h"
 #include "exception.h"
 namespace DTLib {
+//SeqList 顺序存储的线性表结构
+//顺序表的顶级抽象父类
+//实现顺序表的公共接口
 template <typename T>
 class SeqList : public List<T>
 {

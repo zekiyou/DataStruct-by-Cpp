@@ -6,7 +6,7 @@
 #include "exception.h"
 
 namespace DTLib{
-
+//链表类的定义
 template  <typename T>
 class LinkList : public List<T>
 {
