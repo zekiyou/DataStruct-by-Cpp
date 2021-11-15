@@ -2,7 +2,7 @@
 #define LIST_H
 #include "object.h"
 namespace DTLib {
-//链表的顶层抽象父类
+// 链表的顶层抽象父类
 // 提供链表所需基本功能接口
 template <typename T>
     class List : public Object {
