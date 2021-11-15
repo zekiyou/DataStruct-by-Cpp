@@ -22,4 +22,5 @@ HEADERS += \
     linklist.h \
     staticlinklist.h \
     pointer.h \
-    sharepointer.h
+    sharepointer.h \
+    circlelist.h

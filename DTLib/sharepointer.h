@@ -108,7 +108,7 @@ void SharedPointer<T>::clear()
 template<typename T>
 bool operator == (const SharedPointer<T>& obj1, const SharedPointer<T>& obj2)
 {
-    return (obj1.Pointer<T>::get() == obj2.Pointer<T>::get());
+    return (obj1.get() == obj2.get());
 }
 
 template<typename T>

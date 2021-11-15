@@ -29,7 +29,7 @@ protected:
 
 public:
     LinkList();
-    ~LinkList();
+    virtual ~LinkList();
 
     virtual bool insert(int i, const T& e);
     virtual bool insert(const T& e);
@@ -114,6 +114,11 @@ bool LinkList<T>::remove(int i)
          Node* current = reinterpret_cast<Node*>(&m_header);
         for (int var = 0; var < i; ++var) {
             current = current->next;
+        }
+
+        if( m_cur == current->next)    // 这个步骤是为了放置 m_current 仍旧指向被删除的元素；
+        {
+            m_cur = current->next->next;
         }
 
         Node* node = current->next;
@@ -217,6 +222,9 @@ int LinkList<T>::find(const T& e) const
     int ret = -1;
 
     Node* current = reinterpret_cast<Node*>(&m_header);
+
+    current = current->next;
+
     for (int var = 0; var < m_length; ++var) {
 
         if (current->value == e) {
@@ -267,6 +275,7 @@ T LinkList<T>::current()
     else {
         THROW_EXCEPTION(IndexOutOfBoundsException, "IndexOutOfBoundsException");
     }
+
     return ret;
 }
 
@@ -277,9 +286,11 @@ bool LinkList<T>::next()
     int i = 0;
 
     while (i < m_step && !end()) {
+
         m_cur = m_cur->next;
         i++;
     }
+
 
     return (i==m_step);
 
